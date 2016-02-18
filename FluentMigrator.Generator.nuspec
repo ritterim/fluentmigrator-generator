@@ -19,5 +19,7 @@
   </metadata>
   <files>
     <file src="FluentMigrator.psm1" target="tools" />
+    <file src="FluentMigrator.psd1" target="tools" />
+    <file src="init.ps1" target="tools" />
   </files>
 </package>
