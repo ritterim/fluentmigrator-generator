@@ -16,15 +16,15 @@ It couldn't be easier!
 PM > Install-Package FluentMigrator.Generator
 ```
 
-Once installed, open the `Package Manager Console` in Visual Studio. To get there go to `View > Other Windows > Package Manager Console`. **Remember to select the active project, via the `Default Project` dropdown.**
+Once installed, open the `Package Manager Console` in Visual Studio. To get there, go to `View > Other Windows > Package Manager Console`. **Remember to select the active project via the `Default Project` dropdown.**
 
-In the new window type `Add-FluentMigration` followed by the name of your migration.
+In the new window, type `Add-FluentMigration` followed by the name of your migration.
 
 ```console
 Add-FluentMigration InitialMigration
 ```
 
-You should see the following structure in your project.
+You should see the following structure in the `Default Project` project.
 
 ```
 ConsoleApplication1
@@ -32,7 +32,7 @@ ConsoleApplication1
     |- 20160219141436_InitialMigration.cs
 ```
 
-and the contents of that file should look like the following.
+The migration file contents should look like the following.
 
 ```csharp
 using FluentMigrator;
@@ -52,3 +52,5 @@ namespace ConsoleApplication1.Migrations
     }
 }
 ```
+
+Fill in the migration appropriately.
