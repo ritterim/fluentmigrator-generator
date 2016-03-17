@@ -33,7 +33,7 @@ namespace $namespace
         {
         }
     }
-}" | Out-File -Force $outputPath
+}" | Out-File -Encoding "UTF8" -Force $outputPath
 
     $project.ProjectItems.AddFromFile($outputPath)
     $project.Save()
