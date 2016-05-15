@@ -4,10 +4,20 @@ function Add-FluentMigration
     param (
         [parameter(Position = 0,
             Mandatory = $true)]
-        [string] $Name)
+        [string] $Name,
+        [string] $ProjectName)
     $timestamp = (Get-Date -Format yyyyMMddHHmmss)
 
-    $project = Get-Project
+    if ($ProjectName) {
+        $project = Get-Project $ProjectName
+        if ($project -is [array])
+        {
+            throw "More than one project '$ProjectName' was found. Please specify the full name of the one to use."
+        }
+    }
+    else {
+        $project = Get-Project
+    }
     $namespace = $project.Properties.Item("DefaultNamespace").Value.ToString() + ".Migrations"
     $projectPath = [System.IO.Path]::GetDirectoryName($project.FullName)
     $migrationsPath = [System.IO.Path]::Combine($projectPath, "Migrations")
