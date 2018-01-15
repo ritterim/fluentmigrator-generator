@@ -23,7 +23,9 @@ function Add-FluentMigration
     
     # if the $name parameter contains a string '{T}', then replace it with the timestamp but with a underscore between the
     # yyyyMMdd part and the HHmmss part
-    $name = [System.String]::Replace($name, "{T}", $class_name_timestamp)
+    if ($AddTimeStampToClassName) {
+        $name = [System.String]::Replace($name, "{T}", $class_name_timestamp)   
+    }
 
     $namespace = $project.Properties.Item("DefaultNamespace").Value.ToString() + ".Migrations"
     $projectPath = [System.IO.Path]::GetDirectoryName($project.FullName)
