@@ -18,6 +18,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 App_Data/
+tools/
 
 # Roslyn cache directories
 pingme.txt
