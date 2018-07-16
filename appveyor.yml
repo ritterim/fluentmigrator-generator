@@ -1,0 +1,18 @@
+image: Visual Studio 2017
+
+cache:
+  - tools -> build.cake
+
+build_script:
+  - ps: ./build.ps1
+
+test: off
+
+artifacts:
+  - path: ./artifacts/*.nupkg
+
+deploy:
+  - provider: Environment
+    name: NuGet
+    on:
+      branch: master
