@@ -55,7 +55,7 @@ namespace $namespace
 }" | Out-File -Encoding "UTF8" -Force $outputPath
 
     $project.ProjectItems.AddFromFile($outputPath)
-    $project.Save()
+    $project.Save($null)
 }
 
 Export-ModuleMember @( 'Add-FluentMigration' )
